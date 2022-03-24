@@ -12,6 +12,8 @@ public class Shoot : MonoBehaviour
     public bool allowfire;
     public float rateOfFire = 0.03f;
     public int bulletsShot = 0;
+    public AudioSource audioSource;
+    public AudioClip gunSfx;
 
     Vector3 destination;
 
@@ -41,6 +43,7 @@ public class Shoot : MonoBehaviour
         bulletsShot++;
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
+        audioSource.PlayOneShot(gunSfx);
 
         if (Physics.Raycast(ray, out hit))
             destination = hit.point;
