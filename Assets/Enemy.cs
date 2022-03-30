@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
     public int health;
+    public TextMesh healthText;
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
+        healthText.text = health.ToString();
     }
 
     // Update is called once per frame
@@ -23,7 +26,8 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("bullet")) {
-            health = health - 13;
+            health = health - 27;
+            healthText.text = health.ToString();
         }
     }
 

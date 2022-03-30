@@ -14,12 +14,14 @@ public class Shoot : MonoBehaviour
     public int bulletsShot = 0;
     public AudioSource audioSource;
     public AudioClip gunSfx;
+    public Recoil recoil;
+    public int damage;
 
     Vector3 destination;
 
     void Start()
     {
-        
+        recoil = this.GetComponent<Recoil>();
     }
 
     void FixedUpdate()
@@ -41,6 +43,9 @@ public class Shoot : MonoBehaviour
     IEnumerator ShootProjectile() {
         allowfire = false;
         bulletsShot++;
+
+        recoil.Fire();
+
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         audioSource.PlayOneShot(gunSfx);

@@ -168,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6888509864991059357}
   - component: {fileID: 9042111293932600500}
+  - component: {fileID: 2722184283720131054}
   - component: {fileID: 4963858418763270969}
   m_Layer: 0
   m_Name: smg
@@ -215,6 +216,38 @@ MonoBehaviour:
   bulletsShot: 0
   audioSource: {fileID: 4963858418763270969}
   gunSfx: {fileID: 8300000, guid: 9ee194f2dcabbf64ebf06177a4f7afff, type: 3}
+  recoil: {fileID: 0}
+  damage: 29
+--- !u!114 &2722184283720131054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6112290233236109095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4027fee17c5aa4283fdf8c8cb166d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RecoilPositionTranform: {fileID: 0}
+  RecoilRotationTranform: {fileID: 0}
+  PositionDampTime: 0
+  RotationDampTime: 0
+  Recoil1: 0
+  Recoil2: 0
+  Recoil3: 0
+  Recoil4: 0
+  RecoilRotation: {x: 0, y: 0, z: 0}
+  RecoilKickBack: {x: 0, y: 0, z: 0}
+  RecoilRotation_Aim: {x: 0, y: 0, z: 0}
+  RecoilKickBack_Aim: {x: 0, y: 0, z: 0}
+  CurrentRecoil1: {x: 0, y: 0, z: 0}
+  CurrentRecoil2: {x: 0, y: 0, z: 0}
+  CurrentRecoil3: {x: 0, y: 0, z: 0}
+  CurrentRecoil4: {x: 0, y: 0, z: 0}
+  RotationOutput: {x: 0, y: 0, z: 0}
+  aim: 0
 --- !u!82 &4963858418763270969
 AudioSource:
   m_ObjectHideFlags: 0
