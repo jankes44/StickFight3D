@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+        Debug.Log("trigger");
         if(other.gameObject.CompareTag("bullet")) {
             health = health - 27;
             healthText.text = health.ToString();

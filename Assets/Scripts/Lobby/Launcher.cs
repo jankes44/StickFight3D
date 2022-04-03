@@ -72,7 +72,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         for (int i = 0; i < players.Count(); i++)
         {
-            Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
+            // Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]); IMPORTANT TO CREATE A PLAYERLISTITEM ------------------------------------------------------------------------
         }
 
         startGameButton.SetActive(PhotonNetwork.IsMasterClient);
@@ -135,6 +135,6 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
+        // Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer); IMPORTANT TO CREATE A PLAYERLISTITEM ------------------------------------------------------------------------
     }
 }

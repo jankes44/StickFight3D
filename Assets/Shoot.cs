@@ -54,9 +54,10 @@ public class Shoot : MonoBehaviour
             destination = hit.point;
         else destination = ray.GetPoint(1000);
 
-
-        var projectileObject = Instantiate(projectile, shootPos.position, Quaternion.identity);
+        Quaternion projectileRotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y+90, gameObject.transform.rotation.z);
+        var projectileObject = Instantiate(projectile, shootPos.position, projectileRotation);
         projectileObject.GetComponent<Rigidbody>().velocity = (destination - shootPos.position).normalized * projectileSpeed;
+        projectileObject.GetComponent<Rigidbody>().transform.Rotate(gameObject.transform.rotation.x, gameObject.transform.rotation.y, gameObject.transform.rotation.z, Space.World);
         yield return new WaitForSeconds(rateOfFire/100);
         allowfire = true;
     }
